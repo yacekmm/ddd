@@ -1,5 +1,5 @@
 ## What do you need?
-1. Maven
+1. Gradle
 2. Git
 3. Java 17 or higher
 4. Your favourite IDE

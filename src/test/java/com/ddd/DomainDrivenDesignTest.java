@@ -1,4 +1,4 @@
-package com.smalaca;
+package com.ddd;
 
 import org.junit.jupiter.api.Test;
 
