@@ -1,13 +1,13 @@
 package com.ddd.trainings.infra;
 
+import com.ddd.trainings.domain.IdeaId;
 import com.ddd.trainings.domain.TrainingIdea;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 
 public class InMemoryTrainingIdeaRepository implements TrainingIdeaRepository {
 
-  private final HashMap<UUID, TrainingIdea> database = new HashMap<>();
+  private final HashMap<IdeaId, TrainingIdea> database = new HashMap<>();
 
   @Override
   public TrainingIdea save(TrainingIdea idea) {
