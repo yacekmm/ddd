@@ -8,9 +8,9 @@ public class TrainingIdea {
 
   private UUID ideaId;
   private UUID trainerId;
-  private String name;
+  private IdeaNameVO name;
 
-  public TrainingIdea(UUID ideaId, UUID trainerId, String name) {
+  public TrainingIdea(UUID ideaId, UUID trainerId, IdeaNameVO name) {
     this.ideaId = ideaId;
     this.trainerId = trainerId;
     this.name = name;
