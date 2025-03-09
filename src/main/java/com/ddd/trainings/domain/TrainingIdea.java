@@ -1,16 +1,15 @@
 package com.ddd.trainings.domain;
 
-import java.util.UUID;
 import org.jmolecules.ddd.annotation.Entity;
 
 @Entity
 public class TrainingIdea {
 
   private IdeaId ideaId;
-  private UUID trainerId;
+  private TrainerId trainerId;
   private IdeaNameVO name;
 
-  public TrainingIdea(IdeaId ideaId, UUID trainerId, IdeaNameVO name) {
+  public TrainingIdea(IdeaId ideaId, TrainerId trainerId, IdeaNameVO name) {
     this.ideaId = ideaId;
     this.trainerId = trainerId;
     this.name = name;

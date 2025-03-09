@@ -2,10 +2,10 @@ package com.ddd.trainings.api.app;
 
 import com.ddd.trainings.domain.IdeaId;
 import com.ddd.trainings.domain.IdeaNameVO;
+import com.ddd.trainings.domain.TrainerId;
 import com.ddd.trainings.domain.TrainingIdea;
 import com.ddd.trainings.infra.TrainingIdeaRepository;
 import com.ddd.utils.Result;
-import java.util.UUID;
 import org.jmolecules.ddd.annotation.Service;
 
 @Service
@@ -17,13 +17,14 @@ public class TrainingIdeaService {
     this.repository = repository;
   }
 
-  public Result<Error, IdeaId> createTrainingIdea(UUID trainerId, String name) {
+  public Result<Error, IdeaId> createTrainingIdea(String trainerId, String name) {
     Result<Error, IdeaNameVO> ideaNameResult = IdeaNameVO.from(name);
     if(ideaNameResult.isError()) {
       return Result.error(ideaNameResult.getError());
     }
     IdeaId ideaId = IdeaId.create();
-    TrainingIdea idea = new TrainingIdea(ideaId, trainerId, ideaNameResult.getSuccess());
+    TrainerId trainerIdVO = TrainerId.from(trainerId);
+    TrainingIdea idea = new TrainingIdea(ideaId, trainerIdVO, ideaNameResult.getSuccess());
     repository.save(idea);
     return Result.success(idea.getId());
   }
