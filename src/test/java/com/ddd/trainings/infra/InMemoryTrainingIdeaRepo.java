@@ -1,7 +1,8 @@
 package com.ddd.trainings.infra;
 
-import com.ddd.trainings.domain.IdeaId;
-import com.ddd.trainings.domain.TrainingIdea;
+import com.ddd.trainings.idea.domain.IdeaId;
+import com.ddd.trainings.idea.domain.TrainingIdea;
+import com.ddd.trainings.idea.infra.TrainingIdeaRepo;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;

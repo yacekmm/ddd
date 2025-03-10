@@ -1,4 +1,4 @@
-package com.ddd.trainings.domain;
+package com.ddd.trainings.idea.domain;
 
 import static java.util.UUID.randomUUID;
 

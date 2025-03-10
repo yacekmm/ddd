@@ -1,6 +1,6 @@
-package com.ddd.trainings.api.http;
+package com.ddd.trainings.idea.api.http;
 
-import com.ddd.trainings.api.app.TrainingIdeaService;
+import com.ddd.trainings.idea.api.app.TrainingIdeaService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 

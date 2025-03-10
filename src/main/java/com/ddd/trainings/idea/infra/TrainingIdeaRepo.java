@@ -1,7 +1,7 @@
-package com.ddd.trainings.infra;
+package com.ddd.trainings.idea.infra;
 
-import com.ddd.trainings.domain.IdeaId;
-import com.ddd.trainings.domain.TrainingIdea;
+import com.ddd.trainings.idea.domain.IdeaId;
+import com.ddd.trainings.idea.domain.TrainingIdea;
 import java.util.List;
 import java.util.Optional;
 

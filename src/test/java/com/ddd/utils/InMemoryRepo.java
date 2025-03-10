@@ -28,4 +28,9 @@ public class InMemoryRepo<E extends BaseEntity, ID extends BaseId>
     return database.values().stream().toList();
   }
 
+  @Override
+  public int count() {
+    return database.size();
+  }
+
 }

@@ -1,4 +1,4 @@
-package com.ddd.trainings.domain;
+package com.ddd.trainings.idea.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.ddd.trainings.domain;
+package com.ddd.trainings.proposal.domain;
 
 import com.ddd.utils.BaseId;
 import java.util.UUID;

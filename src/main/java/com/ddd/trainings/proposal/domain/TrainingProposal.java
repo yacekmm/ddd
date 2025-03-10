@@ -1,5 +1,6 @@
-package com.ddd.trainings.domain;
+package com.ddd.trainings.proposal.domain;
 
+import com.ddd.trainings.idea.domain.IdeaId;
 import com.ddd.utils.BaseEntity;
 import lombok.Getter;
 
