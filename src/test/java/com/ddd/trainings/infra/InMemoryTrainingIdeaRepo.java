@@ -4,8 +4,9 @@ import com.ddd.trainings.domain.IdeaId;
 import com.ddd.trainings.domain.TrainingIdea;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
-public class InMemoryTrainingIdeaRepository implements TrainingIdeaRepository {
+public class InMemoryTrainingIdeaRepo implements TrainingIdeaRepo {
 
   private final HashMap<IdeaId, TrainingIdea> database = new HashMap<>();
 
@@ -18,5 +19,12 @@ public class InMemoryTrainingIdeaRepository implements TrainingIdeaRepository {
   @Override
   public List<TrainingIdea> findAll() {
     return database.values().stream().toList();
+  }
+
+  @Override
+  public Optional<TrainingIdea> findById(IdeaId ideaId) {
+    return database.values().stream()
+        .filter(idea -> idea.getId().equals(ideaId))
+        .findFirst();
   }
 }

@@ -17,4 +17,9 @@ public class TrainingIdeaRestController {
   public void createTrainingIdea(String trainerId, String name) {
     service.createTrainingIdea(trainerId, name);
   }
+
+  @PostMapping("/training/ideas/{ideaId}/propose")
+  public void proposeTrainingIdea(String ideaId) {
+    service.proposeIdea(ideaId);
+  }
 }

@@ -1,9 +1,10 @@
 package com.ddd.trainings.domain;
 
+import com.ddd.utils.BaseEntity;
 import org.jmolecules.ddd.annotation.Entity;
 
 @Entity
-public class TrainingIdea {
+public class TrainingIdea extends BaseEntity {
 
   private IdeaId ideaId;
   private TrainerId trainerId;
@@ -17,5 +18,9 @@ public class TrainingIdea {
 
   public IdeaId getId() {
     return ideaId;
+  }
+
+  public TrainingProposal propose() {
+    return TrainingProposalFactory.from(getId());
   }
 }
