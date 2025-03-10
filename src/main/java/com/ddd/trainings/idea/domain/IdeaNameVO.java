@@ -1,5 +1,6 @@
 package com.ddd.trainings.idea.domain;
 
+import org.apache.logging.log4j.util.Strings;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 @ValueObject
@@ -21,5 +22,9 @@ public class IdeaNameVO {
 
   public String getValue() {
     return nameValue;
+  }
+
+  public String[] getKeywords() {
+    return Strings.splitList(nameValue);
   }
 }

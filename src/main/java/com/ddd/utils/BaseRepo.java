@@ -10,4 +10,6 @@ public interface BaseRepo<E, ID> {
   Optional<E> findById(ID id);
 
   List<E> findAll();
+
+  int count();
 }

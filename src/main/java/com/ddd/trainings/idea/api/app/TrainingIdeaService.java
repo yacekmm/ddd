@@ -15,10 +15,12 @@ public class TrainingIdeaService {
 
   private final TrainingIdeaRepo ideaRepo;
   private final TrainingProposalRepo proposalRepo;
+  private final ReviewerPolicyFactory reviewerPolicyFactory;
 
-  public TrainingIdeaService(TrainingIdeaRepo ideaRepo, TrainingProposalRepo proposalRepo) {
+  public TrainingIdeaService(TrainingIdeaRepo ideaRepo, TrainingProposalRepo proposalRepo, ReviewerPolicyFactory reviewerPolicyFactory) {
     this.ideaRepo = ideaRepo;
     this.proposalRepo = proposalRepo;
+    this.reviewerPolicyFactory = reviewerPolicyFactory;
   }
 
   public IdeaId createTrainingIdea(String trainerId, String name) {

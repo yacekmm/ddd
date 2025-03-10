@@ -16,12 +16,15 @@ public class TrainingTests {
   protected TrainingIdeaService service;
   protected TrainingIdeaRepo ideaRepo;
   protected TrainingProposalRepo proposalRepo;
+  protected ReviewerRepo reviewerRepo;
 
   @BeforeEach
   void setUp() {
     ideaRepo = new InMemoryTrainingIdeaRepo();
     proposalRepo = new InMemoryTrainingProposalRepo();
-    service = new TrainingIdeaService(ideaRepo, proposalRepo);
+    reviewerRepo = new InMemoryReviewerRepo();
+
+    service = new TrainingIdeaService(ideaRepo, proposalRepo, new ReviewerPolicyFactory(reviewerRepo));
 
   }
 }

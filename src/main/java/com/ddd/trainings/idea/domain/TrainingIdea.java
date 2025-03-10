@@ -25,7 +25,7 @@ public class TrainingIdea extends BaseEntity {
     return ideaId;
   }
 
-  public TrainingProposal propose() {
-    return TrainingProposalFactory.from(getId());
+  public TrainingProposal propose(ReviewerPolicy reviewerPolicy) {
+    return TrainingProposalFactory.from(getId(), reviewerPolicy.selectReviewer());
   }
 }

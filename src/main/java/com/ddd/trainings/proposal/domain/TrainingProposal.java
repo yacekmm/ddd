@@ -9,11 +9,14 @@ public class TrainingProposal extends BaseEntity {
   @Getter
   private final ProposalId id;
   private final IdeaId ideaId;
+  @Getter
+  private final ReviewerId reviewerId;
   private String review;
 
-  public TrainingProposal(ProposalId id, IdeaId ideaId, String review) {
+  public TrainingProposal(ProposalId id, IdeaId ideaId, ReviewerId reviewerId, String review) {
     this.id = id;
     this.ideaId = ideaId;
+    this.reviewerId = reviewerId;
     this.review = review;
   }
 }
