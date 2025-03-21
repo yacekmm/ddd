@@ -10,10 +10,10 @@ import org.jmolecules.ddd.annotation.Entity;
 @Entity
 public class TrainingIdea extends BaseEntity {
 
-  private IdeaId ideaId;
-  private TrainerId trainerId;
+  private final IdeaId ideaId;
+  private final TrainerId trainerId;
   @Getter
-  private IdeaNameVO name;
+  private final IdeaNameVO name;
 
   public TrainingIdea(IdeaId ideaId, TrainerId trainerId, IdeaNameVO name) {
     this.ideaId = ideaId;
