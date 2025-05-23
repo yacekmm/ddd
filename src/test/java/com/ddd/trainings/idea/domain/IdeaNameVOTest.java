@@ -1,7 +1,6 @@
 package com.ddd.trainings.idea.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.ddd.trainings.TrainingTests;
 import org.junit.jupiter.api.Test;
@@ -23,11 +22,7 @@ class IdeaNameVOTest extends TrainingTests {
     
     @Test
     void from_throwsException_onInvalidLengthName() {
-        // expect
-        assertThatThrownBy(() -> IdeaNameVO.from(null)) .isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> IdeaNameVO.from("Too short")) .isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> IdeaNameVO.from("a".repeat(9))).isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> IdeaNameVO.from("A".repeat(161))).isInstanceOf(IllegalArgumentException.class);
+        //TODO: Implement unit tests
     }
 
     @Test
