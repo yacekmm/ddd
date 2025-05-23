@@ -13,17 +13,24 @@ import org.jmolecules.ddd.annotation.Entity;
 @Getter
 public class TrainingIdea extends BaseEntity {
   
-  private final IdeaId ideaId;
-  private final TrainerId trainerId;
-  private final IdeaNameVO name;
-  private final TrainingDurationVO duration;
+  private IdeaId ideaId;
+  private TrainerId trainerId;
+  private IdeaNameVO name;
+  private TrainingDurationVO duration;
 
   @Override
   public IdeaId getId() {
     return ideaId;
   }
 
+  public void editDuration(TrainingDurationVO duration) {
+    this.duration = duration;
+  }
+
   public TrainingProposal propose(ReviewerPolicy reviewerPolicy) {
-    return TrainingProposalFactory.from(getId(), reviewerPolicy.selectReviewer());
+    if(duration.isEmpty()) {
+      throw new IllegalArgumentException("Duration is empty");
+    }
+    return TrainingProposalFactory.from(this.getId(), reviewerPolicy.selectReviewer());
   }
 }

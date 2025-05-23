@@ -14,7 +14,7 @@ class TrainingIdeaService_propose_test extends TrainingTests {
   @Test
   void proposeIdea_createsProposal_onValid() {
     //given
-    IdeaId ideaId = service.createTrainingIdea("trainer-id", "DDD Training");
+    IdeaId ideaId = trainingIdeaBuilder.inDb().getId();
     Reviewer expectedReviewer = reviewerRepo.save(ReviewerFactory.create());
 
     //when
@@ -28,7 +28,7 @@ class TrainingIdeaService_propose_test extends TrainingTests {
   @Test
   void proposeIdea_error_onMissingReviewers() {
     //given
-    IdeaId ideaId = service.createTrainingIdea("trainer-id", "DDD Training");
+    IdeaId ideaId = trainingIdeaBuilder.inDb().getId();
 
     //expect
     assertThrows(RuntimeException.class, () -> service.proposeIdea(ideaId.getValue()));

@@ -4,8 +4,10 @@ import com.ddd.utils.BaseId;
 import java.util.UUID;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
-@EqualsAndHashCode(of = "value", callSuper = false)
+@EqualsAndHashCode
+@ToString
 public class ReviewerId extends BaseId {
 
   @Getter

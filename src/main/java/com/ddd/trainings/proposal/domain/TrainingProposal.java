@@ -12,6 +12,7 @@ public class TrainingProposal extends BaseEntity {
 
   @Getter
   private final ProposalId id;
+  @Getter
   private final IdeaId ideaId;
   @Getter
   private final ReviewerId reviewerId;

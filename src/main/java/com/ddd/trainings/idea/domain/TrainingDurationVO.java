@@ -21,4 +21,8 @@ public class TrainingDurationVO {
   public static TrainingDurationVO empty() {
     return new TrainingDurationVO(0);
   }
+
+  public boolean isEmpty() {
+    return days == 0;
+  }
 } 
