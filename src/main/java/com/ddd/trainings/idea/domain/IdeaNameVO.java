@@ -1,30 +1,25 @@
 package com.ddd.trainings.idea.domain;
 
-import org.apache.logging.log4j.util.Strings;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 @ValueObject
+@AllArgsConstructor
 public class IdeaNameVO {
 
+  @Getter
   private final String nameValue;
 
-  public IdeaNameVO(String nameValue) {
-    this.nameValue = nameValue;
-  }
-
   public static IdeaNameVO from(String name) {
-    if(name == null || name.length() < 10 || name.length() > 160) {
+    if (name == null || name.length() < 10 || name.length() > 160) {
       throw new IllegalArgumentException("Name must be at least 10 characters long");
     } else {
       return new IdeaNameVO(name);
     }
   }
 
-  public String getValue() {
-    return nameValue;
-  }
-
   public String[] getKeywords() {
-    return Strings.splitList(nameValue);
+    return nameValue.split(" ");
   }
 }

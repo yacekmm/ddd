@@ -1,16 +1,16 @@
 package com.ddd.trainings.proposal.domain;
 
-import static org.apache.commons.lang3.RandomUtils.nextInt;
-
 import com.ddd.trainings.idea.domain.IdeaNameVO;
 import com.ddd.trainings.proposal.infra.ReviewerRepo;
 import java.util.List;
+import java.util.Random;
 import org.jmolecules.ddd.annotation.Factory;
 
 @Factory
 public class ReviewerPolicyFactory {
 
   private final ReviewerRepo reviewerRepo;
+  private final Random random = new Random();
 
   public ReviewerPolicyFactory(ReviewerRepo reviewerRepo) {
     this.reviewerRepo = reviewerRepo;
@@ -38,7 +38,7 @@ public class ReviewerPolicyFactory {
           throw new RuntimeException("No available reviewers");
         }
 
-        int randomIndex = nextInt(0, candidates.size());
+        int randomIndex = random.nextInt(candidates.size());
 
         return candidates.get(randomIndex).getId();
       }
