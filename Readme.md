@@ -2,7 +2,7 @@
 1. Gradle
 2. Git
 3. Java 17 or higher
-4. Your favourite IDE
+4. IDE (recommended IntelliJ Idea)
 
 ## How to verify the project?
 1. Checkout repository.
