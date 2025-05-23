@@ -46,6 +46,7 @@ class TrainingIdeaTest extends TrainingTests {
         // then
         assertThat(proposal).isNotNull();
         assertThat(proposal.getIdeaId()).isEqualTo(idea.getId());
+        assertThat(idea.isProposed()).isTrue();
     }
 
     @Test
