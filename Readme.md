@@ -1,7 +1,7 @@
 ## What do you need?
 1. Gradle
 2. Git
-3. Java 17 or higher
+3. Java 21 or higher
 4. IDE (recommended IntelliJ Idea)
 
 ## How to verify the project?
