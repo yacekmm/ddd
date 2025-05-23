@@ -1,4 +1,33 @@
+# Compiled files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Output directories
 /build/
-/.idea/
 /out/
+/target/
+/bin/
+/classes/
+/dist/
+
+# Gradle files
 /.gradle/
+**/build/
+.gradletasknamecache
+gradle-app.setting
+
+# IDE files
+/.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
