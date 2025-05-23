@@ -41,6 +41,13 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.withType(Test) {
+    testLogging {
+        events = ["passed", "failed", "skipped"]
+        exceptionFormat = "full"
+    }
+}
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }

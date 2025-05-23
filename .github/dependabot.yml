@@ -1,0 +1,14 @@
+# https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+
+  - package-ecosystem: "gradle"
+    directory: "."
+    schedule:
+      interval: "weekly"
+      time: "12:30"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    open-pull-requests-limit: 3
