@@ -43,12 +43,4 @@ public class TrainingProposal extends BaseEntity {
     domainEvents.clear();
   }
 
-  public TrainingTemplate accept(String review) {
-    return new TrainingTemplate(TemplateId.create(), ideaId, review);
-  }
-
-  public TrainingIdea reject(String review) {
-    // TODO: Implement
-    return null;
-  }
 }

@@ -17,9 +17,4 @@ public class TrainingTemplate extends BaseEntity {
     this.ideaId = ideaId;
     this.review = review;
   }
-
-  @Override
-  public TemplateId getId() {
-    return id;
-  }
 } 
