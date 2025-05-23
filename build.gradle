@@ -21,7 +21,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
-    implementation 'com.google.guava:guava:33.2.0-jre'
+    implementation 'com.google.guava:guava:33.4.8-jre'
     implementation 'org.apache.commons:commons-lang3:3.14.0'
     implementation 'org.jmolecules:jmolecules-ddd:1.10.0'
     implementation 'org.projectlombok:lombok'
