@@ -1,0 +1,15 @@
+using System.Collections.Generic;
+using System.Linq;
+using Ddd.Trainings.Idea.Domain;
+using Ddd.Trainings.Idea.Infra;
+using Ddd.Utils;
+
+namespace Ddd.Tests.Trainings.Idea.Infra.Tests;
+
+public class InMemoryTrainingIdeaRepo : BaseRepo<TrainingIdea, IdeaId>, ITrainingIdeaRepo
+{
+  public List<TrainingIdea> FindAll()
+  {
+    return base.FindAll().ToList();
+  }
+}

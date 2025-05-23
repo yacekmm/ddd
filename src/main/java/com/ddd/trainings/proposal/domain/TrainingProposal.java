@@ -32,7 +32,6 @@ public class TrainingProposal extends BaseEntity {
   }
 
   public TrainingIdea reject(String review) {
-    // TODO: Implement
     return null;
   }
 

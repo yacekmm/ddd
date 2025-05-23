@@ -1,3 +1,16 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "omnisharp.useModernNet": true,
+    "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableEditorConfigSupport": true,
+    "dotnet.server.useOmnisharp": true,
+    "dotnet.testExplorer.useOmnisharp": true,
+    "dotnet.testExplorer.autoWatch": true,
+    "dotnet.testExplorer.codeLens": true,
+    "dotnet.testExplorer.testProjectPath": "**/*Tests.csproj",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.test.config": {
+        "vmArgs": ["-ea"]
+    },
+    "java.debug.settings.hotCodeReplace": "auto"
 }
