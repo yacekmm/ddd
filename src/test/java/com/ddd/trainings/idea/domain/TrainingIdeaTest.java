@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.ddd.trainings.TrainingTests;
-import com.ddd.trainings.proposal.domain.ReviewerId;
-import com.ddd.trainings.proposal.domain.ReviewerPolicy;
 import com.ddd.trainings.proposal.domain.TrainingProposal;
 import org.junit.jupiter.api.Test;
 
@@ -38,10 +36,9 @@ class TrainingIdeaTest extends TrainingTests {
     void propose_createsProposal_whenDurationIsValid() {
         // given
         TrainingIdea idea = trainingIdeaBuilder.build();
-        ReviewerPolicy reviewerPolicy = () -> new ReviewerId("reviewer-id");
 
         // when
-        TrainingProposal proposal = idea.propose(reviewerPolicy);
+        TrainingProposal proposal = idea.propose(FAKE_REVIEWER_POLICY);
 
         // then
         assertThat(proposal).isNotNull();
@@ -55,12 +52,10 @@ class TrainingIdeaTest extends TrainingTests {
         TrainingIdea idea = trainingIdeaBuilder
             .withDuration(TrainingDurationVO.empty())
             .build();
-        ReviewerPolicy reviewerPolicy = () -> new ReviewerId("reviewer-id");
 
         // when & then
-        assertThatThrownBy(() -> idea.propose(reviewerPolicy))
+        assertThatThrownBy(() -> idea.propose(FAKE_REVIEWER_POLICY))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("Duration is empty");
     }
-
 } 
