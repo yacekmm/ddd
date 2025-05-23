@@ -15,8 +15,8 @@ public class TrainingProposal extends BaseEntity {
   private final IdeaId ideaId;
   @Getter
   private final ReviewerId reviewerId;
-  private final String review;
   private final List<Object> domainEvents = new ArrayList<>();
+  private final String review;
 
   public TrainingProposal(ProposalId id, IdeaId ideaId, ReviewerId reviewerId, String review) {
     this.id = id;
@@ -41,5 +41,14 @@ public class TrainingProposal extends BaseEntity {
 
   public void clearDomainEvents() {
     domainEvents.clear();
+  }
+
+  public TrainingTemplate accept(String review) {
+    return new TrainingTemplate(TemplateId.create(), ideaId, review);
+  }
+
+  public TrainingIdea reject(String review) {
+    // TODO: Implement
+    return null;
   }
 }
