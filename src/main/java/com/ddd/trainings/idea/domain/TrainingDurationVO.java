@@ -17,4 +17,8 @@ public class TrainingDurationVO {
         }
         return new TrainingDurationVO(days);
     }
+
+  public static TrainingDurationVO empty() {
+    return new TrainingDurationVO(0);
+  }
 } 

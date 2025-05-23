@@ -28,4 +28,15 @@ class TrainingDurationVOTest extends TrainingTests {
         assertThatThrownBy(() -> TrainingDurationVO.from(6)).isInstanceOf(IllegalArgumentException.class);
         assertThatThrownBy(() -> TrainingDurationVO.from(-1)).isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void empty_createsTrainingDuration_withZeroDays() {
+        // when
+        TrainingDurationVO duration = TrainingDurationVO.empty();
+
+        // then
+        assertThat(duration).isNotNull();
+        assertThat(duration.getDays()).isZero();
+    }
+
 } 

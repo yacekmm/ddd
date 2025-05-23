@@ -4,23 +4,21 @@ import com.ddd.trainings.proposal.domain.ReviewerPolicy;
 import com.ddd.trainings.proposal.domain.TrainingProposal;
 import com.ddd.trainings.proposal.domain.TrainingProposalFactory;
 import com.ddd.utils.BaseEntity;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.jmolecules.ddd.annotation.Entity;
 
 @Entity
+@AllArgsConstructor
+@Getter
 public class TrainingIdea extends BaseEntity {
-
+  
   private final IdeaId ideaId;
   private final TrainerId trainerId;
-  @Getter
   private final IdeaNameVO name;
+  private final TrainingDurationVO duration;
 
-  public TrainingIdea(IdeaId ideaId, TrainerId trainerId, IdeaNameVO name) {
-    this.ideaId = ideaId;
-    this.trainerId = trainerId;
-    this.name = name;
-  }
-
+  @Override
   public IdeaId getId() {
     return ideaId;
   }
