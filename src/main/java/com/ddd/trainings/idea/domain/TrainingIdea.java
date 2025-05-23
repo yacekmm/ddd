@@ -1,8 +1,8 @@
 package com.ddd.trainings.idea.domain;
 
+import com.ddd.trainings.proposal.domain.ProposalId;
 import com.ddd.trainings.proposal.domain.ReviewerPolicy;
 import com.ddd.trainings.proposal.domain.TrainingProposal;
-import com.ddd.trainings.proposal.domain.TrainingProposalFactory;
 import com.ddd.utils.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,10 +32,10 @@ public class TrainingIdea extends BaseEntity {
   }
 
   public TrainingProposal propose(ReviewerPolicy reviewerPolicy) {
-    if(duration.isEmpty()) {
-      throw new IllegalArgumentException("Duration is empty");
-    }
-    isProposed = true;
-    return TrainingProposalFactory.from(this.getId(), reviewerPolicy.selectReviewer());
+    // TODO: Implement proposed methods Make sure to:
+    // validate if duration is not empty
+    // set flag isProposed to true
+    // return new training proposal
+    return new TrainingProposal(ProposalId.create(), ideaId, reviewerPolicy.selectReviewer(), "");
   }
 }
