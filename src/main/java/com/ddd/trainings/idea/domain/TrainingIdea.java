@@ -17,6 +17,7 @@ public class TrainingIdea extends BaseEntity {
   private TrainerId trainerId;
   private IdeaNameVO name;
   private TrainingDurationVO duration;
+  private boolean isProposed;
 
   @Override
   public IdeaId getId() {
@@ -24,6 +25,9 @@ public class TrainingIdea extends BaseEntity {
   }
 
   public void editDuration(TrainingDurationVO duration) {
+    if (isProposed) {
+      throw new IllegalStateException("Cannot edit duration of proposed idea");
+    }
     this.duration = duration;
   }
 
@@ -31,6 +35,7 @@ public class TrainingIdea extends BaseEntity {
     if(duration.isEmpty()) {
       throw new IllegalArgumentException("Duration is empty");
     }
+    isProposed = true;
     return TrainingProposalFactory.from(this.getId(), reviewerPolicy.selectReviewer());
   }
 }

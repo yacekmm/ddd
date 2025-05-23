@@ -9,6 +9,7 @@ public class TrainingIdeaBuilder {
     private TrainerId trainerId = TrainerId.from("trainer-id");
     private IdeaNameVO name = IdeaNameVO.from("Test Training");
     private TrainingDurationVO duration = TrainingDurationVO.from(2);
+    private boolean isProposed;
 
     private final TrainingIdeaRepo ideaRepo;
 
@@ -32,8 +33,13 @@ public class TrainingIdeaBuilder {
         return this;
     }
 
+    public TrainingIdeaBuilder proposed(boolean isProposed) {
+        this.isProposed = isProposed;
+        return this;
+    }
+
     public TrainingIdea build() {
-        return new TrainingIdea(ideaId, trainerId, name, duration);
+        return new TrainingIdea(ideaId, trainerId, name, duration, isProposed);
     }
 
     public TrainingIdea inDb() {

@@ -9,7 +9,7 @@ public class TrainingIdeaFactory {
     IdeaNameVO ideaName = IdeaNameVO.from(name);
     IdeaId ideaId = IdeaId.create();
     TrainerId trainerIdVO = TrainerId.from(trainerId);
-    TrainingIdea idea = new TrainingIdea(ideaId, trainerIdVO, ideaName, TrainingDurationVO.empty());
+    TrainingIdea idea = new TrainingIdea(ideaId, trainerIdVO, ideaName, TrainingDurationVO.empty(), false);
     return idea;
   }
 }

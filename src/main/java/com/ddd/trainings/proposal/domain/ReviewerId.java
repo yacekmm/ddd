@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper=false)
 @ToString
 public class ReviewerId extends BaseId {
 

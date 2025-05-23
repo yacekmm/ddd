@@ -24,6 +24,17 @@ class TrainingIdeaTest extends TrainingTests {
     }
 
     @Test
+    void editDuration_throwsException_whenIdeaIsProposed() {
+        // given
+        TrainingIdea idea = trainingIdeaBuilder.proposed(true).build();
+
+        // when & then
+        assertThatThrownBy(() -> idea.editDuration(TrainingDurationVO.from(3)))
+            .isInstanceOf(IllegalStateException.class)
+            .hasMessage("Cannot edit duration of proposed idea");
+    }
+
+    @Test
     void propose_createsProposal_whenDurationIsValid() {
         // given
         TrainingIdea idea = trainingIdeaBuilder.build();
@@ -50,4 +61,5 @@ class TrainingIdeaTest extends TrainingTests {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("Duration is empty");
     }
+
 } 
