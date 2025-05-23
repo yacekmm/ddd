@@ -37,4 +37,6 @@ public class TrainingIdeaService {
     proposalRepo.save(proposal);
     return proposal.getId();
   }
+
+  // TODO: implement edit duration method
 }
