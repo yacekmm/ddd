@@ -1,5 +1,0 @@
-C:\Users\jacek\IdeaProjects\2025-03-ddd\src\Ddd.Domain\obj\Debug\net8.0\Ddd.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jacek\IdeaProjects\2025-03-ddd\src\Ddd.Domain\obj\Debug\net8.0\Ddd.Domain.AssemblyInfoInputs.cache
-C:\Users\jacek\IdeaProjects\2025-03-ddd\src\Ddd.Domain\obj\Debug\net8.0\Ddd.Domain.AssemblyInfo.cs
-C:\Users\jacek\IdeaProjects\2025-03-ddd\src\Ddd.Domain\obj\Debug\net8.0\Ddd.Domain.csproj.CoreCompileInputs.cache
-C:\Users\jacek\IdeaProjects\2025-03-ddd\src\Ddd.Domain\obj\Debug\net8.0\Ddd.Domain.sourcelink.json
