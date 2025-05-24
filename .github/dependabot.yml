@@ -2,8 +2,17 @@
 
 version: 2
 updates:
-
   - package-ecosystem: "gradle"
+    directory: "."
+    schedule:
+      interval: "weekly"
+      time: "12:30"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "nuget"
     directory: "."
     schedule:
       interval: "weekly"
