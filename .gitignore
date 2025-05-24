@@ -16,6 +16,10 @@
 /bin/
 /classes/
 /dist/
+/src/Ddd/bin/
+/src/Ddd/obj/
+/src/Ddd.Tests/bin/
+/src/Ddd.Tests/obj/
 
 # Gradle files
 /.gradle/

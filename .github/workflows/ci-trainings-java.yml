@@ -1,5 +1,5 @@
-name: Trainings CI
-run-name: Trainings CI
+name: Trainings CI (Java)
+run-name: Trainings CI (Java)
 
 on:
   push:
