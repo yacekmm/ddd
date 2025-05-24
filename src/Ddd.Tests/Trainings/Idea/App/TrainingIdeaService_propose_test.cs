@@ -18,7 +18,7 @@ public class TrainingIdeaService_propose_test : TrainingTests
     Service.ProposeIdea(ideaId.GetValue());
 
     //then
-    Assert.Equal(1, ProposalRepo.Count());
+    Assert.Single(ProposalRepo.FindAll());
     Assert.Equal(expectedReviewer.Id, ProposalRepo.FindAll().First().ReviewerId);
     Assert.True(IdeaRepo.FindById(ideaId).IsProposed);
   }
@@ -31,6 +31,6 @@ public class TrainingIdeaService_propose_test : TrainingTests
 
     //expect
     Assert.Throws<Exception>(() => Service.ProposeIdea(ideaId.GetValue()));
-    Assert.Equal(0, ProposalRepo.Count());
+    Assert.Empty(ProposalRepo.FindAll());
   }
 }

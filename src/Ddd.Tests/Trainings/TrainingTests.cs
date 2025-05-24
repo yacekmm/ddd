@@ -1,8 +1,8 @@
 using Ddd.Trainings.Idea.Api.App;
 using Ddd.Trainings.Idea.Domain.Tests;
-using Ddd.Trainings.Idea.Infra;
+using Ddd.Trainings.Idea.Domain.Ports;
 using Ddd.Trainings.Proposal.Domain;
-using Ddd.Trainings.Proposal.Infra;
+using Ddd.Trainings.Proposal.Domain.Ports;
 using Ddd.Tests.Trainings.Idea.Infra.Tests;
 using Ddd.Tests.Trainings.Proposal.Infra.Tests;
 
@@ -12,7 +12,7 @@ public abstract class TrainingTests
 {
   protected TrainingIdeaService Service;
   protected ITrainingIdeaRepo IdeaRepo;
-  protected TrainingProposalRepo ProposalRepo;
+  protected ITrainingProposalRepo ProposalRepo;
   protected IReviewerRepo ReviewerRepo;
   protected TrainingIdeaBuilder TrainingIdeaBuilder;
 

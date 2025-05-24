@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Ddd.Trainings.Idea.Domain;
-using Ddd.Trainings.Proposal.Infra;
+using Ddd.Trainings.Proposal.Domain.Ports;
 
 namespace Ddd.Trainings.Proposal.Domain
 {

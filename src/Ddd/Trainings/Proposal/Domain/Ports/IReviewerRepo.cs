@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Ddd.Trainings.Idea.Domain;
+using Ddd.Trainings.Proposal.Domain;
 using Ddd.Utils;
 
-namespace Ddd.Trainings.Proposal.Domain;
+namespace Ddd.Trainings.Proposal.Domain.Ports;
 
 public interface IReviewerRepo : IBaseRepo<Reviewer, ReviewerId>
 {

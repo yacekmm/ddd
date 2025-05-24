@@ -1,5 +1,4 @@
-using Ddd.Trainings.Idea.Domain;
-using Ddd.Trainings.Idea.Infra;
+using Ddd.Trainings.Idea.Domain.Ports;
 using Ddd.Trainings.Proposal.Domain;
 
 namespace Ddd.Trainings.Idea.Domain.Tests;

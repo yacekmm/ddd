@@ -1,3 +1,5 @@
+using Ddd.Trainings.Proposal.Domain.Ports;
+
 namespace Ddd.Trainings.Proposal.Domain;
 
 public class RandomReviewerPolicy : ReviewerPolicy

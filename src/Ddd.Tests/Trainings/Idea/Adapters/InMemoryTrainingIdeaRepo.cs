@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ddd.Trainings.Idea.Domain;
-using Ddd.Trainings.Idea.Infra;
+using Ddd.Trainings.Idea.Domain.Ports;
 using Ddd.Utils;
 
 namespace Ddd.Tests.Trainings.Idea.Infra.Tests;

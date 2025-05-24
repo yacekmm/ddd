@@ -3,7 +3,7 @@ using Ddd.Trainings.Idea.Domain;
 using Ddd.Trainings.Proposal.Domain;
 using Xunit;
 
-namespace Ddd.Trainings.Idea.Domain.Tests;
+namespace Ddd.Trainings.Idea.Domain;
 
 public class TrainingIdeaTest : TrainingTests
 {

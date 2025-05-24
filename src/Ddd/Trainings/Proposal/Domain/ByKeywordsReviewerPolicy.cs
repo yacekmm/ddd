@@ -1,4 +1,5 @@
 using Ddd.Trainings.Idea.Domain;
+using Ddd.Trainings.Proposal.Domain.Ports;
 
 namespace Ddd.Trainings.Proposal.Domain;
 
