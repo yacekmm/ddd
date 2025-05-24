@@ -15,6 +15,8 @@ public class InMemoryReviewerRepo : BaseRepo<Reviewer, ReviewerId>, IReviewerRep
 
     public IEnumerable<Reviewer> FindByKeywordsOrderByCurrentReviewsCount(string[] keywords)
     {
-        return FindAll();
+        return _entities.Values
+            .Where(r => r.Keywords.Intersect(keywords, StringComparer.OrdinalIgnoreCase).Any())
+            .OrderBy(r => r.CurrentReviewsCount);
     }
 }

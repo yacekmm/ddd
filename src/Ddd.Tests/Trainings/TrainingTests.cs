@@ -16,7 +16,7 @@ public abstract class TrainingTests
   protected IReviewerRepo ReviewerRepo;
   protected TrainingIdeaBuilder TrainingIdeaBuilder;
 
-  protected static readonly ReviewerPolicy FakeReviewerPolicy = new FakeReviewerPolicy();
+  protected static readonly IReviewerPolicy FakeReviewerPolicy = new FakeReviewerPolicy();
 
   public TrainingTests()
   {
@@ -34,7 +34,7 @@ public abstract class TrainingTests
   }
 }
 
-public class FakeReviewerPolicy : ReviewerPolicy
+public class FakeReviewerPolicy : IReviewerPolicy
 {
   public ReviewerId SelectReviewer()
   {

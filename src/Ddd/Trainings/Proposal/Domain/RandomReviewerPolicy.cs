@@ -2,7 +2,7 @@ using Ddd.Trainings.Proposal.Domain.Ports;
 
 namespace Ddd.Trainings.Proposal.Domain;
 
-public class RandomReviewerPolicy(IReviewerRepo reviewerRepo) : ReviewerPolicy
+public class RandomReviewerPolicy(IReviewerRepo reviewerRepo) : IReviewerPolicy
 {
   private readonly Random _random = new();
 

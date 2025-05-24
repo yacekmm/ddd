@@ -11,8 +11,8 @@ public class TrainingIdeaService_propose_test : TrainingTests
   public void ProposeIdea_createsProposal_onValid()
   {
     //given
-    var ideaId = TrainingIdeaBuilder.InDb().IdeaId;
-    var expectedReviewer = ReviewerRepo.Save(ReviewerFactory.Create("name", ["keyword1", "keyword2"]));
+    var ideaId = TrainingIdeaBuilder.WithName("Test Idea long enough").InDb().IdeaId;
+    var expectedReviewer = ReviewerRepo.Save(ReviewerFactory.Create("name", ["idea"]));
 
     //when
     Service.ProposeIdea(ideaId.GetValue());

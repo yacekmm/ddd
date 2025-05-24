@@ -30,9 +30,9 @@ public class TrainingIdeaBuilder
         return this;
     }
 
-    public TrainingIdeaBuilder WithName(IdeaNameVO name)
+    public TrainingIdeaBuilder WithName(string name)
     {
-        _name = name;
+        _name = IdeaNameVO.From(name);
         return this;
     }
 
@@ -63,7 +63,7 @@ public class TrainingIdeaBuilder
         return _ideaRepo.Save(Build());
     }
 
-    private class FakeReviewerPolicy : ReviewerPolicy
+    private class FakeReviewerPolicy : IReviewerPolicy
     {
         public ReviewerId SelectReviewer()
         {

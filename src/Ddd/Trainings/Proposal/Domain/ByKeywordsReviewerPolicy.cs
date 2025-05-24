@@ -3,20 +3,11 @@ using Ddd.Trainings.Proposal.Domain.Ports;
 
 namespace Ddd.Trainings.Proposal.Domain;
 
-public class ByKeywordsReviewerPolicy : ReviewerPolicy
+public class ByKeywordsReviewerPolicy(IReviewerRepo reviewerRepo, IdeaNameVO name) : IReviewerPolicy
 {
-    private readonly IReviewerRepo _reviewerRepo;
-    private readonly IdeaNameVO _name;
-
-    public ByKeywordsReviewerPolicy(IReviewerRepo reviewerRepo, IdeaNameVO name)
+  public ReviewerId SelectReviewer()
     {
-        _reviewerRepo = reviewerRepo;
-        _name = name;
-    }
-
-    public ReviewerId SelectReviewer()
-    {
-        var candidates = _reviewerRepo.FindByKeywordsOrderByCurrentReviewsCount(_name.Keywords);
+        var candidates = reviewerRepo.FindByKeywordsOrderByCurrentReviewsCount(name.Keywords);
         return candidates.Select(r => r.Id).FirstOrDefault() ?? throw new Exception("No available reviewers");
     }
 } 

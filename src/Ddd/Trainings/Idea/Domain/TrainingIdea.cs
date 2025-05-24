@@ -25,7 +25,7 @@ namespace Ddd.Trainings.Idea.Domain
             Duration = duration;
         }
 
-        public TrainingProposal Propose(ReviewerPolicy reviewerPolicy)
+        public TrainingProposal Propose(IReviewerPolicy reviewerPolicy)
         {
             if (Duration.IsEmpty())
             {

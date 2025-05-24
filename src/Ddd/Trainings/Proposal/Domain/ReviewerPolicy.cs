@@ -1,6 +1,7 @@
+
 namespace Ddd.Trainings.Proposal.Domain;
 
-public interface ReviewerPolicy
+public interface IReviewerPolicy
 {
     ReviewerId SelectReviewer();
 } 
