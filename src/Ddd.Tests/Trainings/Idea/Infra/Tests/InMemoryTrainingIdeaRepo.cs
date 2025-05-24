@@ -8,7 +8,7 @@ namespace Ddd.Tests.Trainings.Idea.Infra.Tests;
 
 public class InMemoryTrainingIdeaRepo : BaseRepo<TrainingIdea, IdeaId>, ITrainingIdeaRepo
 {
-  public List<TrainingIdea> FindAll()
+  public override List<TrainingIdea> FindAll()
   {
     return base.FindAll().ToList();
   }

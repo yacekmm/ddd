@@ -4,23 +4,25 @@ namespace Ddd.Utils
 {
     public abstract class BaseId
     {
-        // public abstract string Value { get; }
+        // protected string Value;
 
-    //     public override bool Equals(object? obj)
+        // protected BaseId(string value)
+        // {
+        //     Value = value;
+        // }
+
+        public abstract override bool Equals(object? obj);
     //     {
     //         if (obj is not BaseId other)
     //             return false;
     //         return Value.Equals(other.Value);
     //     }
 
-    //     public override int GetHashCode()
+        public abstract override int GetHashCode();
     //     {
     //         return Value.GetHashCode();
     //     }
 
-    //     public override string ToString()
-    //     {
-    //         return Value;
-    //     }
+        public abstract string GetValue();
     }
 } 

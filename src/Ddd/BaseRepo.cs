@@ -4,7 +4,12 @@ namespace Ddd.Utils;
 
 public abstract class BaseRepo<T, TId> : IBaseRepo<T, TId> where T : BaseEntity<TId> where TId : BaseId
 {
-    protected readonly Dictionary<TId, T> _entities = [];
+    protected readonly Dictionary<TId, T> _entities;
+
+    protected BaseRepo()
+    {
+        _entities = new Dictionary<TId, T>();
+    }
 
     public virtual T Save(T entity)
     {

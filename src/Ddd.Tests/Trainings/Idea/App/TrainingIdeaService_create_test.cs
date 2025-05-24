@@ -10,7 +10,7 @@ public class TrainingIdeaService_create_test : TrainingTests
     private const string ValidTrainerId = "trainer-id";
     private const string ValidTitle = "DDD Training";
     private const string ShortTitle = "short";
-    private static readonly string LongTitle = new string('a', 161);
+    private static readonly string LongTitle = new('a', 161);
 
     [Fact]
     public void CreateIdea_persistsIdea_onValidInputs()
@@ -20,6 +20,8 @@ public class TrainingIdeaService_create_test : TrainingTests
 
         //then
         Assert.Single(IdeaRepo.FindAll());
+        Assert.Equal(ValidTrainerId, IdeaRepo.FindAll().First().TrainerId.Value);
+        Assert.Equal(ValidTitle, IdeaRepo.FindAll().First().Name.NameValue);
     }
 
     [Fact]

@@ -15,11 +15,12 @@ public class TrainingIdeaService_propose_test : TrainingTests
     var expectedReviewer = ReviewerRepo.Save(ReviewerFactory.Create("name", ["keyword1", "keyword2"]));
 
     //when
-    Service.ProposeIdea(ideaId.Value);
+    Service.ProposeIdea(ideaId.GetValue());
 
     //then
     Assert.Equal(1, ProposalRepo.Count());
     Assert.Equal(expectedReviewer.Id, ProposalRepo.FindAll().First().ReviewerId);
+    Assert.True(IdeaRepo.FindById(ideaId).IsProposed);
   }
 
   [Fact]
@@ -29,7 +30,7 @@ public class TrainingIdeaService_propose_test : TrainingTests
     var ideaId = TrainingIdeaBuilder.InDb().IdeaId;
 
     //expect
-    Assert.Throws<Exception>(() => Service.ProposeIdea(ideaId.Value));
+    Assert.Throws<Exception>(() => Service.ProposeIdea(ideaId.GetValue()));
     Assert.Equal(0, ProposalRepo.Count());
   }
 }
