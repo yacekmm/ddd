@@ -2,21 +2,14 @@ using Ddd.Trainings.Proposal.Domain.Ports;
 
 namespace Ddd.Trainings.Proposal.Domain;
 
-public class RandomReviewerPolicy : ReviewerPolicy
+public class RandomReviewerPolicy(IReviewerRepo reviewerRepo) : ReviewerPolicy
 {
-    private readonly IReviewerRepo _reviewerRepo;
-    private readonly Random _random;
+  private readonly Random _random = new();
 
-    public RandomReviewerPolicy(IReviewerRepo reviewerRepo)
+  public ReviewerId SelectReviewer()
     {
-        _reviewerRepo = reviewerRepo;
-        _random = new Random();
-    }
-
-    public ReviewerId SelectReviewer()
-    {
-        var reviewers = _reviewerRepo.FindByKeywordsOrderByCurrentReviewsCount(Array.Empty<string>()).ToList();
-        if (!reviewers.Any())
+        var reviewers = reviewerRepo.FindAll().ToList();
+        if (reviewers.Count == 0)
             throw new Exception("No available reviewers");
             
         var randomIndex = _random.Next(reviewers.Count);
