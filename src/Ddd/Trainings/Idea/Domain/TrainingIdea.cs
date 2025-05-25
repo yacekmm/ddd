@@ -18,11 +18,7 @@ namespace Ddd.Trainings.Idea.Domain
 
         public void EditDuration(TrainingDurationVO duration)
         {
-            if (IsProposed)
-            {
-                throw new InvalidOperationException("Cannot edit duration of proposed idea");
-            }
-            Duration = duration;
+            // TODO: Implement edit duration methods if idea is not yet proposed.
         }
 
         public TrainingProposal Propose(IReviewerPolicy reviewerPolicy)

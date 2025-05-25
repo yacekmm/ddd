@@ -25,10 +25,7 @@ public class TrainingIdea extends BaseEntity {
   }
 
   public void editDuration(TrainingDurationVO duration) {
-    if (isProposed) {
-      throw new IllegalStateException("Cannot edit duration of proposed idea");
-    }
-    this.duration = duration;
+    // TODO: Implement edit duration methods if idea is not yet proposed.
   }
 
   public TrainingProposal propose(ReviewerPolicy reviewerPolicy) {

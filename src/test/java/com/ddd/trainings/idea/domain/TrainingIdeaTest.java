@@ -11,25 +11,12 @@ class TrainingIdeaTest extends TrainingTests {
 
     @Test
     void editDuration_updatesDuration() {
-        // given
-        TrainingIdea idea = trainingIdeaBuilder.build();
-
-        // when
-        idea.editDuration(TrainingDurationVO.from(3));
-
-        // then
-        assertThat(idea.getDuration().getDays()).isEqualTo(3);
+        //TODO Implement test for Edit Duration
     }
 
     @Test
     void editDuration_throwsException_whenIdeaIsProposed() {
-        // given
-        TrainingIdea idea = trainingIdeaBuilder.proposed(true).build();
-
-        // when & then
-        assertThatThrownBy(() -> idea.editDuration(TrainingDurationVO.from(3)))
-            .isInstanceOf(IllegalStateException.class)
-            .hasMessage("Cannot edit duration of proposed idea");
+        //TODO Test if edit duration throws exception when idea is already proposed.
     }
 
     @Test

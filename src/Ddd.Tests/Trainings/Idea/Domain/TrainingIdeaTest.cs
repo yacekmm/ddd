@@ -10,25 +10,13 @@ public class TrainingIdeaTest : TrainingTests
     [Fact]
     public void EditDuration_UpdatesDuration()
     {
-        // given
-        TrainingIdea idea = TrainingIdeaBuilder.Build();
-
-        // when
-        idea.EditDuration(TrainingDurationVO.From(3));
-
-        // then
-        Assert.Equal(3, idea.Duration.Days);
+        //TODO Implement test for Edit Duration
     }
 
     [Fact]
     public void EditDuration_ThrowsException_WhenIdeaIsProposed()
     {
-        // given
-        TrainingIdea idea = TrainingIdeaBuilder.Proposed(true).Build();
-
-        // when & then
-        var exception = Assert.Throws<InvalidOperationException>(() => idea.EditDuration(TrainingDurationVO.From(3)));
-        Assert.Equal("Cannot edit duration of proposed idea", exception.Message);
+        //TODO Test if edit duration throws exception when idea is already proposed.
     }
 
     [Fact]
