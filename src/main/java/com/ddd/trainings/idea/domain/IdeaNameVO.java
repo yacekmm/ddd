@@ -12,11 +12,8 @@ public class IdeaNameVO {
   private final String nameValue;
 
   public static IdeaNameVO from(String name) {
-    if (name == null || name.length() < 10 || name.length() > 160) {
-      throw new IllegalArgumentException("Name must be at least 10 characters long");
-    } else {
-      return new IdeaNameVO(name);
-    }
+    //TODO: Implement validation of idea name
+    return new IdeaNameVO(name);
   }
 
   public String[] getKeywords() {

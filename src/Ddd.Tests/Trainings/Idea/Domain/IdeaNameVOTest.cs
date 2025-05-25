@@ -25,11 +25,7 @@ public class IdeaNameVOTest : TrainingTests
   [Fact]
   public void From_ThrowsException_OnInvalidLengthName()
   {
-    // expect
-    Assert.Throws<ArgumentException>(() => IdeaNameVO.From(null!));
-    Assert.Throws<ArgumentException>(() => IdeaNameVO.From("Too short"));
-    Assert.Throws<ArgumentException>(() => IdeaNameVO.From(new string('a', 9)));
-    Assert.Throws<ArgumentException>(() => IdeaNameVO.From(new string('A', 161)));
+    //TODO: Implement unit tests
   }
 
   [Fact]
