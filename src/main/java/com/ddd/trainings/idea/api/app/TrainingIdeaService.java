@@ -34,6 +34,7 @@ public class TrainingIdeaService {
     TrainingIdea idea = ideaRepo.findById(IdeaId.from(ideaId))
         .orElseThrow(() -> new RuntimeException("Idea not found"));
 
+    // TODO: Use new policy when training idea name starts with letter A
     TrainingProposal proposal = idea.propose(reviewerPolicyFactory.byKeywords(idea.getName()));
     proposalRepo.save(proposal);
     return proposal.getId();

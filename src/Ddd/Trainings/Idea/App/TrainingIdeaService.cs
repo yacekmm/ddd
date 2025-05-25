@@ -38,6 +38,7 @@ public class TrainingIdeaService
     public ProposalId ProposeIdea(string ideaId)
     {
         TrainingIdea idea = _ideaRepo.FindById(IdeaId.From(ideaId)) ?? throw new Exception("Idea not found");
+        // TODO: Use new policy when training idea name starts with letter A
         TrainingProposal proposal = idea.Propose(_reviewerPolicyFactory.ByKeywords(idea.Name));
         _proposalRepo.Save(proposal);
         return proposal.Id;

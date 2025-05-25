@@ -14,5 +14,7 @@ namespace Ddd.Trainings.Proposal.Domain
         {
             return new RandomReviewerPolicy(reviewerRepo);
         }
+
+        // TODO: implement new policy and test for it
     }
 } 
