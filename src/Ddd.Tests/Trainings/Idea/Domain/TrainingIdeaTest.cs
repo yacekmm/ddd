@@ -38,12 +38,7 @@ public class TrainingIdeaTest : TrainingTests
         TrainingIdea idea = TrainingIdeaBuilder.Build();
 
         // when
-        TrainingProposal proposal = idea.Propose(FakeReviewerPolicy);
-
-        // then
-        Assert.NotNull(proposal);
-        Assert.Equal(idea.GetId(), proposal.IdeaId);
-        Assert.True(idea.IsProposed);
+        // TODO: Implement test that proposes training idea
     }
 
     [Fact]
@@ -55,7 +50,6 @@ public class TrainingIdeaTest : TrainingTests
             .Build();
 
         // when & then
-        var exception = Assert.Throws<ArgumentException>(() => idea.Propose(FakeReviewerPolicy));
-        Assert.Equal("Duration is empty", exception.Message);
+        // TODO: verify that idea with invalidation throws exception
     }
 } 
