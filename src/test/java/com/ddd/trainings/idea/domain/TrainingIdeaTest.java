@@ -38,7 +38,7 @@ class TrainingIdeaTest extends TrainingTests {
         TrainingIdea idea = trainingIdeaBuilder.build();
 
         // when
-        TrainingProposal proposal = idea.propose(FAKE_REVIEWER_POLICY);
+        TrainingProposal proposal = idea.propose();
 
         // then
         assertThat(proposal).isNotNull();
@@ -54,7 +54,7 @@ class TrainingIdeaTest extends TrainingTests {
             .build();
 
         // when & then
-        assertThatThrownBy(() -> idea.propose(FAKE_REVIEWER_POLICY))
+        assertThatThrownBy(() -> idea.propose())
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("Duration is empty");
     }

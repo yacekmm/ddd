@@ -4,7 +4,7 @@ import com.ddd.trainings.idea.domain.IdeaId;
 
 public class TrainingProposalFactory {
 
-    public static TrainingProposal from(IdeaId ideaId, ReviewerId reviewerId) {
-        return new TrainingProposal(ProposalId.create(), ideaId, reviewerId, "");
+    public static TrainingProposal from(IdeaId ideaId) {
+        return new TrainingProposal(ProposalId.create(), ideaId, null, "");
     }
 }

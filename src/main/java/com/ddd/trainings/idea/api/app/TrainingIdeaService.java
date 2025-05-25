@@ -33,8 +33,8 @@ public class TrainingIdeaService {
   public ProposalId proposeIdea(String ideaId) {
     TrainingIdea idea = ideaRepo.findById(IdeaId.from(ideaId))
         .orElseThrow(() -> new RuntimeException("Idea not found"));
-
-    TrainingProposal proposal = idea.propose(reviewerPolicyFactory.byKeywords(idea.getName()));
+    // TODO: Propose should select reviewer based on policy
+    TrainingProposal proposal = idea.propose();
     proposalRepo.save(proposal);
     return proposal.getId();
   }

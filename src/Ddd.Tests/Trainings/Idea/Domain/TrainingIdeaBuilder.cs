@@ -53,7 +53,8 @@ public class TrainingIdeaBuilder
         var idea = new TrainingIdea(_ideaId, _trainerId, _name, _duration);
         if (_isProposed)
         {
-            idea.Propose(new FakeReviewerPolicy());
+            //TODO: Use Select Reviewer Policy
+            idea.Propose();
         }
         return idea;
     }

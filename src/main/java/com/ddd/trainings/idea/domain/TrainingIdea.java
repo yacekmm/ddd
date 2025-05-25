@@ -1,6 +1,5 @@
 package com.ddd.trainings.idea.domain;
 
-import com.ddd.trainings.proposal.domain.ReviewerPolicy;
 import com.ddd.trainings.proposal.domain.TrainingProposal;
 import com.ddd.trainings.proposal.domain.TrainingProposalFactory;
 import com.ddd.utils.BaseEntity;
@@ -31,11 +30,12 @@ public class TrainingIdea extends BaseEntity {
     this.duration = duration;
   }
 
-  public TrainingProposal propose(ReviewerPolicy reviewerPolicy) {
+  public TrainingProposal propose() {
     if(duration.isEmpty()) {
       throw new IllegalArgumentException("Duration is empty");
     }
     isProposed = true;
-    return TrainingProposalFactory.from(this.getId(), reviewerPolicy.selectReviewer());
+    // TODO: Use Select Reviewer Policy
+    return TrainingProposalFactory.from(this.getId());
   }
 }

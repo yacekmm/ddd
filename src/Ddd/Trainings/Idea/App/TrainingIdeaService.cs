@@ -38,7 +38,8 @@ public class TrainingIdeaService
     public ProposalId ProposeIdea(string ideaId)
     {
         TrainingIdea idea = _ideaRepo.FindById(IdeaId.From(ideaId)) ?? throw new Exception("Idea not found");
-        TrainingProposal proposal = idea.Propose(_reviewerPolicyFactory.ByKeywords(idea.Name));
+        // TODO: Propose should select reviewer based on policy
+        TrainingProposal proposal = idea.Propose();
         _proposalRepo.Save(proposal);
         return proposal.Id;
     }

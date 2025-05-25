@@ -25,14 +25,15 @@ namespace Ddd.Trainings.Idea.Domain
             Duration = duration;
         }
 
-        public TrainingProposal Propose(IReviewerPolicy reviewerPolicy)
+        public TrainingProposal Propose()
         {
             if (Duration.IsEmpty())
             {
                 throw new ArgumentException("Duration is empty");
             }
             IsProposed = true;
-            return TrainingProposalFactory.From(GetId(), reviewerPolicy.SelectReviewer());
+            // TODO: Use Select Reviewer Policy
+            return TrainingProposalFactory.From(GetId());
         }
     }
 } 
