@@ -28,6 +28,13 @@ public class TrainingIdeaService
         return saved.GetId();
     }
 
+    public void EditDuration(string ideaId, int days)
+    {
+        TrainingIdea idea = _ideaRepo.FindById(IdeaId.From(ideaId)) ?? throw new Exception("Idea not found");
+        idea.EditDuration(TrainingDurationVO.From(days));
+        _ideaRepo.Save(idea);
+    }
+
     public ProposalId ProposeIdea(string ideaId)
     {
         TrainingIdea idea = _ideaRepo.FindById(IdeaId.From(ideaId)) ?? throw new Exception("Idea not found");
