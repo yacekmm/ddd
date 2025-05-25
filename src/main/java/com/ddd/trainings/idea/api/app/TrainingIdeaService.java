@@ -1,6 +1,7 @@
 package com.ddd.trainings.idea.api.app;
 
 import com.ddd.trainings.idea.domain.IdeaId;
+import com.ddd.trainings.idea.domain.TrainingDurationVO;
 import com.ddd.trainings.idea.domain.TrainingIdea;
 import com.ddd.trainings.idea.domain.TrainingIdeaFactory;
 import com.ddd.trainings.idea.infra.TrainingIdeaRepo;
@@ -36,5 +37,12 @@ public class TrainingIdeaService {
     TrainingProposal proposal = idea.propose(reviewerPolicyFactory.byKeywords(idea.getName()));
     proposalRepo.save(proposal);
     return proposal.getId();
+  }
+
+  public void editDuration(String ideaId, int days) {
+    TrainingIdea idea = ideaRepo.findById(IdeaId.from(ideaId))
+        .orElseThrow(() -> new RuntimeException("Idea not found"));
+    idea.editDuration(TrainingDurationVO.from(days));
+    ideaRepo.save(idea);
   }
 }
