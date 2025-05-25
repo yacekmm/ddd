@@ -18,19 +18,13 @@ namespace Ddd.Trainings.Idea.Domain
 
         public void EditDuration(TrainingDurationVO duration)
         {
-            if (IsProposed)
-            {
-                throw new InvalidOperationException("Cannot edit duration of proposed idea");
-            }
+            // TODO: Move it to IdeaValidationService.validateEdit Domain Service. make sure it is properly tested
             Duration = duration;
         }
 
         public TrainingProposal Propose(IReviewerPolicy reviewerPolicy)
         {
-            if (Duration.IsEmpty())
-            {
-                throw new ArgumentException("Duration is empty");
-            }
+            // TODO: Move it to IdeaValidationService.validateProposal Domain Service. make sure it is properly tested
             IsProposed = true;
             return TrainingProposalFactory.From(GetId(), reviewerPolicy.SelectReviewer());
         }

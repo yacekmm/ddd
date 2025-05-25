@@ -25,6 +25,7 @@ public class TrainingIdea extends BaseEntity {
   }
 
   public void editDuration(TrainingDurationVO duration) {
+    // TODO: Move it to IdeaValidationService.validateEdit Domain Service. make sure it is properly tested
     if (isProposed) {
       throw new IllegalStateException("Cannot edit duration of proposed idea");
     }
@@ -32,6 +33,7 @@ public class TrainingIdea extends BaseEntity {
   }
 
   public TrainingProposal propose(ReviewerPolicy reviewerPolicy) {
+    // TODO: Move it to IdeaValidationService.validateProposal Domain Service. make sure it is properly tested
     if(duration.isEmpty()) {
       throw new IllegalArgumentException("Duration is empty");
     }
