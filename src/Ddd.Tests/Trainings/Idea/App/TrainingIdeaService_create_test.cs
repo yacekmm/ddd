@@ -19,19 +19,13 @@ public class TrainingIdeaService_create_test : TrainingTests
         Service.CreateTrainingIdea(ValidTrainerId, ValidTitle);
 
         //then
-        Assert.Single(IdeaRepo.FindAll());
-        Assert.Equal(ValidTrainerId, IdeaRepo.FindAll().First().TrainerId.Value);
-        Assert.Equal(ValidTitle, IdeaRepo.FindAll().First().Name.NameValue);
+        // TODO: Assert idea is persisted in repository
     }
 
     [Fact]
     public void CreateIdea_error_onInvalidTitle()
     {
-        //expect
-        Assert.Throws<ArgumentException>(() => Service.CreateTrainingIdea(ValidTrainerId, null!));
-        Assert.Throws<ArgumentException>(() => Service.CreateTrainingIdea(ShortTitle, null!));
-        Assert.Throws<ArgumentException>(() => Service.CreateTrainingIdea(LongTitle, null!));
-
-        Assert.Empty(IdeaRepo.FindAll());
+        // TODO: Assert that error is returned.
+        // TODO: Assert idea is not persisted
     }
 } 

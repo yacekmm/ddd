@@ -3,7 +3,6 @@ package com.ddd.trainings.idea.api.app;
 import com.ddd.trainings.idea.domain.IdeaId;
 import com.ddd.trainings.idea.domain.TrainingDurationVO;
 import com.ddd.trainings.idea.domain.TrainingIdea;
-import com.ddd.trainings.idea.domain.TrainingIdeaFactory;
 import com.ddd.trainings.idea.infra.TrainingIdeaRepo;
 import com.ddd.trainings.proposal.domain.ProposalId;
 import com.ddd.trainings.proposal.domain.ReviewerPolicyFactory;
@@ -25,9 +24,9 @@ public class TrainingIdeaService {
   }
 
   public IdeaId createTrainingIdea(String trainerId, String name) {
-    TrainingIdea idea = TrainingIdeaFactory.create(trainerId, name);
-    TrainingIdea saved = ideaRepo.save(idea);
-    return saved.getId();
+    // TODO: Implement creating idea using IdeaFactory
+    // TODO: save it in the repository
+    return null;
   }
 
   public ProposalId proposeIdea(String ideaId) {

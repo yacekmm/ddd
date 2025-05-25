@@ -23,9 +23,9 @@ public class TrainingIdeaService
 
     public IdeaId CreateTrainingIdea(string trainerId, string name)
     {
-        TrainingIdea idea = TrainingIdeaFactory.Create(trainerId, name);
-        TrainingIdea saved = _ideaRepo.Save(idea);
-        return saved.GetId();
+        // TODO: Implement creating idea using IdeaFactory
+        // TODO: save it in the repository
+        return null;
     }
 
     public void EditDuration(string ideaId, int days)
