@@ -6,10 +6,7 @@ namespace Ddd.Trainings.Idea.Domain
 
     public static TrainingDurationVO From(int days)
         {
-            if (days < 1 || days > 5)
-            {
-                throw new ArgumentException("Training duration must be between 1 and 5 days");
-            }
+            //TODO: Implement validation of number of days
             return new TrainingDurationVO(days);
         }
 

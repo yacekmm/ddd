@@ -23,10 +23,7 @@ public class TrainingDurationVOTest : TrainingTests
   [Fact]
   public void From_ThrowsException_OnInvalidDays()
   {
-    // expect
-    Assert.Throws<ArgumentException>(() => TrainingDurationVO.From(0));
-    Assert.Throws<ArgumentException>(() => TrainingDurationVO.From(6));
-    Assert.Throws<ArgumentException>(() => TrainingDurationVO.From(-1));
+    //TODO: implement test for number of days validation
   }
 
   [Fact]

@@ -12,9 +12,7 @@ public class TrainingDurationVO {
   private final int days;
 
   public static TrainingDurationVO from(int days) {
-        if (days < 1 || days > 5) {
-            throw new IllegalArgumentException("Training duration must be between 1 and 5 days");
-        }
+        //TODO: Implement validation of number of days
         return new TrainingDurationVO(days);
     }
 
