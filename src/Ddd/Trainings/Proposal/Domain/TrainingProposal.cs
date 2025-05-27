@@ -31,7 +31,7 @@ namespace Ddd.Trainings.Proposal.Domain
 
         public TrainingIdea Reject(string review)
         {
-            // TODO: Implement
+            // Implement
             return null!;
         }
 

@@ -27,11 +27,10 @@ namespace Ddd.Trainings.Idea.Domain
 
         public TrainingProposal Propose(IReviewerPolicy reviewerPolicy)
         {
-            if (Duration.IsEmpty())
-            {
-                throw new ArgumentException("Duration is empty");
-            }
-            IsProposed = true;
+            // TODO: Implement proposed methods Make sure to:
+            // validate if duration is not empty
+            // set flag isProposed to true
+            // return new training proposal
             return TrainingProposalFactory.From(GetId(), reviewerPolicy.SelectReviewer());
         }
     }
