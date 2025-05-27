@@ -12,7 +12,7 @@ public class TrainingDurationVO {
   private final int days;
 
   public static TrainingDurationVO from(int days) {
-        //TODO: Implement validation of number of days
+        //TODO: Implement validation of number of days (Value Object?)
         return new TrainingDurationVO(days);
     }
 

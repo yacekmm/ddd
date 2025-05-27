@@ -6,7 +6,7 @@ namespace Ddd.Trainings.Idea.Domain
 
     public static TrainingDurationVO From(int days)
         {
-            //TODO: Implement validation of number of days
+            //TODO: Implement validation of number of days (Value Object?)
             return new TrainingDurationVO(days);
         }
 

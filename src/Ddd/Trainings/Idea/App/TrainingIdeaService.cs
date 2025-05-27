@@ -31,6 +31,7 @@ public class TrainingIdeaService
     public void EditDuration(string ideaId, int days)
     {
         TrainingIdea idea = _ideaRepo.FindById(IdeaId.From(ideaId)) ?? throw new Exception("Idea not found");
+        // TODO: Implement validation of training duration (Service?)
         idea.EditDuration(TrainingDurationVO.From(days));
         _ideaRepo.Save(idea);
     }

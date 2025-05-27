@@ -42,6 +42,7 @@ public class TrainingIdeaService {
   public void editDuration(String ideaId, int days) {
     TrainingIdea idea = ideaRepo.findById(IdeaId.from(ideaId))
         .orElseThrow(() -> new RuntimeException("Idea not found"));
+    // TODO: Implement validation of training duration (Service?)
     idea.editDuration(TrainingDurationVO.from(days));
     ideaRepo.save(idea);
   }
