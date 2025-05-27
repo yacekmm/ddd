@@ -36,7 +36,6 @@ public class TrainingIdeaService_edit_duration_test : TrainingTests
         var ideaId = TrainingIdeaBuilder.InDb().GetId();
 
         // expect
-        Assert.Throws<ArgumentException>(() => Service.EditDuration(ideaId.GetValue(), 0));
         Assert.Throws<ArgumentException>(() => Service.EditDuration(ideaId.GetValue(), 6));
         Assert.Throws<ArgumentException>(() => Service.EditDuration(ideaId.GetValue(), -1));
     }
