@@ -19,12 +19,20 @@ namespace Ddd.Trainings.Idea.Domain
         public void EditDuration(TrainingDurationVO duration)
         {
             // TODO: Move it to IdeaValidationService.validateEdit Domain Service. make sure it is properly tested
+            if (IsProposed)
+            {
+                throw new InvalidOperationException("Cannot edit duration of proposed idea");
+            }
             Duration = duration;
         }
 
         public TrainingProposal Propose(IReviewerPolicy reviewerPolicy)
         {
             // TODO: Move it to IdeaValidationService.validateProposal Domain Service. make sure it is properly tested
+            if (Duration.IsEmpty())
+            {
+                throw new ArgumentException("Duration is empty");
+            }
             IsProposed = true;
             return TrainingProposalFactory.From(GetId(), reviewerPolicy.SelectReviewer());
         }
